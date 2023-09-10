@@ -16,7 +16,7 @@ function App() {
   }, [movieData]);
 
   const player = async () => {
-    const API = `http://localhost:9010/videos?title=${movieTitle}`;
+    const API = `https://cinescope-5wiz.onrender.com/videos?title=${movieTitle}`;
     const res = await axios.get(API);
     setPlayerData(res.data);
   };
@@ -27,7 +27,7 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const API = `http://localhost:9010/movies?title=${movieTitle}`;
+    const API = `https://cinescope-5wiz.onrender.com/movies?title=${movieTitle}`;
     const response = await axios.get(API);
     console.log(response);
     setMovieData(response.data);

@@ -14,7 +14,7 @@ export default function Forum() {
 
   // READ
   async function getComments() {
-    let API = "http://localhost:9010/moviesComment";
+    let API = "https://cinescope-5wiz.onrender.com/moviesComment";
     const result = await axios.get(API);
     console.log(result.data);
     setComments(result.data);
@@ -23,7 +23,7 @@ export default function Forum() {
   // CREATE
   const handleAddComment = async (newCommentFormData) => {
     const res = await axios.post(
-      "http://localhost:9010/moviesComment",
+      "https://cinescope-5wiz.onrender.com/moviesComment",
       newCommentFormData
     );
     setComments([...comments, res.data]);
@@ -31,7 +31,9 @@ export default function Forum() {
 
   // delete comment
   const handleDeleteComment = async (id) => {
-    const res = await axios.delete(`http://localhost:9010/moviesComment/${id}`);
+    const res = await axios.delete(
+      `https://cinescope-5wiz.onrender.com/moviesComment/${id}`
+    );
     console.log(res);
     getComments();
   };
@@ -40,7 +42,7 @@ export default function Forum() {
 
   const handleUpdateComment = async (comment) => {
     await axios.put(
-      `http://localhost:9010/moviesComment/${comment._id}`,
+      `https://cinescope-5wiz.onrender.com/moviesComment/${comment._id}`,
       comment
     );
     getComments();

@@ -11,7 +11,7 @@ export default function Home({ setMovieData, handleInputChange, movieTitle }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const API = `http://localhost:9010/movies?title=${movieTitle}`;
+    const API = `https://cinescope-5wiz.onrender.com/movies?title=${movieTitle}`;
     const response = await axios.get(API);
     console.log(response);
     setMovieData(response.data);
