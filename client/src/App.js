@@ -11,8 +11,10 @@ function App() {
   const [movieTitle, setMovieTitle] = useState("");
   const [movieData, setMovieData] = useState({});
   const [playerData, setPlayerData] = useState({});
+
   useEffect(() => {
     player();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieData]);
 
   const player = async () => {
