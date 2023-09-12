@@ -58,7 +58,7 @@ app.get("/movies", async (request, response) => {
 app.get("/videos", async (request, response) => {
   const realedYear = request.query.year;
   const movieTitle = request.query.title;
-  const API2 = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${movieTitle}+${realedYear}+official+trailer&key=${process.env.YOUTUBE_KEY}`;
+  const API2 = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${movieTitle}+${realedYear}+official+trailer&key=${process.env.YOUTUBE_KEY2}`;
   const res = await axios.get(API2);
   response.status(200).json(res.data.items[0].id.videoId);
   console.log("Video is working");
