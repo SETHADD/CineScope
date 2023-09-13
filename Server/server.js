@@ -16,7 +16,11 @@ const Comments = require("./models/comments");
 mongoose.connect(process.env.MONGODB_KEY);
 
 app.get("/", (request, response) => {
-  response.status(200).json("can I be heard?");
+  response
+    .status(200)
+    .json(
+      "This is the Server for Cinescope. Add '/videos' and ''/movies' to see the data from the YouTube and OMDb APIs respectively. Thanks"
+    );
 });
 
 //view comments
